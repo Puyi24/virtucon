@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block add_style %}
+<link rel="stylesheet" href="{% static 'styles/workers_list.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <ul class="workers list-group my-3 mx-auto ">
+    {% for worker in workers %}
+        <li class="worker list-group-item mx-auto col-6">
+            <img class="worker_pic rounded" src="{{ worker.profile_pic.url }}">
+            <h3>{{ worker }}</h3>
+            {% if worker.job.id == 2 %}
+                <p>Head of {{ worker.department }} department</p>
+            {% else %}
+                <p>{{ worker.job }}</p>
+            {% endif %}
+            <p>Joined at {{worker.hire_date}}</p>
+            <p>Phone number: {{ worker.phone }}</p>
+            <address>email: <a href="mailto:{{ worker.email }}">{{ worker.email }}</a></address>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

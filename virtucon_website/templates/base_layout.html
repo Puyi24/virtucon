@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtucon</title>
+    <link rel="icon" href="{% static 'pics/tab_icon.png' %}">
+    <link rel="stylesheet" href="{% static 'styles/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/base_layout.css' %}">
+    {% block add_style %}
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar-nav sticky-top navbar-expand-lg navbar-dark bg-secondary">
+        <div class="navbar-icon mx-auto py-3">
+            <img src="{% static 'pics/navbar_icon.png' %}">
+        </div>
+        <div ></div>
+    </nav>
+    <main>
+        <div class="wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    <script src="{% static 'styles/bootstrap/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

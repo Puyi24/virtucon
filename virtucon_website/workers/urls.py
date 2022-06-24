@@ -1,10 +1,7 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
-from rest_framework import routers
-router = routers.DefaultRouter()
-router.register('jobs', views.JobView)
-router.register('departments', views.DepartmentView)
-router.register('workers', views.WorkerView)
+
+app_name = 'workers_app'
 urlpatterns = [
-    path('api/', include(router.urls))
+    path('', views.redirect_home, name='go_home'),
 ]

@@ -21,9 +21,10 @@ from django.conf import settings
 from workers import views as workers_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', workers_views.workers_list, name='home'),
-    path('', include('workers.urls'))
+    path('admin/', admin.site.urls),
+    path('workers/', include('workers.urls')),
+    path('api/', include('workers_api.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

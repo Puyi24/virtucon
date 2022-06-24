@@ -1,23 +1,18 @@
-from django.shortcuts import render
-from rest_framework import viewsets, permissions
+from django.shortcuts import render, redirect
 from .models import Job, Department, Worker
-from .serializers import JobSerializer, DepartmentSerializer, WorkerSerializer
+
 
 def workers_list(request):
-    workers = Worker.objects.all().order_by('id')
-    return render(request, 'workers_list.html', {'workers': workers})
+    ceo = Worker.objects.get(job=1)
+    managers = Worker.objects.filter(job=2)
+    workers = Worker.objects.exclude(job=1).exclude(job=2)
+    return render(request, 'workers_list.html', {'ceo': ceo,
+                                                 'managers': managers,
+                                                 'workers': workers})
 
-class JobView(viewsets.ModelViewSet):
-    queryset = Job.objects.all()
-    serializer_class = JobSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
-class DepartmentView(viewsets.ModelViewSet):
-    queryset = Department.objects.all()
-    serializer_class = DepartmentSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+def redirect_home(request):
+    return redirect('/')
 
-class WorkerView(viewsets.ModelViewSet):
-    queryset = Worker.objects.all()
-    serializer_class = WorkerSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
+

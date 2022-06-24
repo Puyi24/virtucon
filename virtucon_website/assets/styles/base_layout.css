@@ -1,3 +1,7 @@
 body {
     background: #BCC6CC;
 }
+
+.nav-link {
+    font-size: 20px;
+}

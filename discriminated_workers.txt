@@ -1,8 +1,60 @@
-Name: Robert Wagner
-Professional Name: Number 2
-Job Description: Department Head
+Average salary: 297626.32
+Workers with one year of seniority or more and salary below average:
+
+Name: Mike Myers
+Professional Name: Fat Bastard
+Job Description: Assassin
+Department: Attack and Defense
+Salary: 250000
+Hired at: 1999-05-02
+
+******************
+
+Name: Patty O'Brien
+Job Description: Assassin
+Department: Attack and Defense
+Salary: 250000
+Hired at: 1997-05-02
+
+******************
+
+Name: Joe Son
+Professional Name: Random Task
+Job Description: Assassin
+Department: Attack and Defense
+Salary: 250000
+Hired at: 1997-05-02
+
+******************
+
+Name: Henry Paul
+Job Description: Financial Planner
 Department: Finance and Revenue
-Salary: 500000
+Salary: 110000
+Hired at: 2012-05-20
+
+******************
+
+Name: Richard Ford
+Job Description: Stocks Expert
+Department: Finance and Revenue
+Salary: 95000
+Hired at: 1995-12-05
+
+******************
+
+Name: Diane Fitzgerald
+Job Description: Rocket Scientist
+Department: Technology and Research
+Salary: 14000
+Hired at: 2003-07-07
+
+******************
+
+Name: Albert Anderson
+Job Description: Cryonics Freezing Expert
+Department: Technology and Research
+Salary: 20000
 Hired at: 1967-01-01
 
 ******************

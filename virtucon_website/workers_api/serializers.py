@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Worker, Job, Department
+from workers.models import Job, Department, Worker
 
 
 class JobSerializer(serializers.HyperlinkedModelSerializer):
@@ -17,5 +17,5 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
 class WorkerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Worker
-        fields = ['id', 'url', 'first_name', 'last_name', 'professional_name', 'profile_pic',
-                  'job', 'department', 'team_members', 'manager', 'salary', 'hire_date', 'email', 'phone']
+        fields = ['id', 'url', 'first_name', 'last_name', 'profile_pic',
+                  'job', 'department', 'short_bio', 'team_members', 'manager', 'salary', 'hire_date', 'email', 'phone']

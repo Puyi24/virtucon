@@ -39,8 +39,12 @@ def main():
     workers_url = "http://127.0.0.1:8000/api/workers/"
     workers_data = {}
     workers_data['workers'] = extract_api(workers_url)
-    average_salary = mean([worker['salary'] for worker in workers_data['workers']])
+    average_salary = mean(
+        [worker['salary'] for worker in workers_data['workers']]
+    )
     with open('discriminated_workers.txt', 'w') as result_file:
+        result_file.write('Average salary: %.2f\n' % average_salary)
+        result_file.write('Workers with more than one year of seniority and salary below average:\n\n')
         for worker in workers_data['workers']:
             if worker['salary'] < average_salary and seniority_check(worker['hire_date']) >= 1:
                 result_file.write(worker_to_str(worker))

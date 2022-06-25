@@ -13,12 +13,24 @@
 <body>
     <nav class="navbar-nav sticky-top navbar-expand-lg navbar-dark bg-secondary">
         <div class="navbar-icon mx-auto py-3">
-            <img src="{% static 'pics/navbar_icon.png' %}">
+            <a href="{% url 'home' %}"><img src="{% static 'pics/navbar_icon.png' %}"></a>
         </div>
         <div class="collapse navbar-collapse bg-dark py-2">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
+                <li class="nav-item me-4">
                     <a class="nav-link" target="_blank" href="/api/">View API</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="#">Board</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="#">Finance and Revenue</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="#">Attack and Defense</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Technology and Research</a>
                 </li>
             </ul>
         </div>

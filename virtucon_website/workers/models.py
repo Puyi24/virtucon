@@ -23,7 +23,7 @@ class Worker(models.Model):
     profile_pic = models.ImageField(default="")
     job = models.ForeignKey(Job, default="Confidential", on_delete=models.SET_DEFAULT, )
     department = models.ForeignKey(Department, default="General", on_delete=models.SET_DEFAULT)
-    short_bio = models.TextField(blank=True, default='')
+    personal_motto = models.CharField(max_length=255, default='')
     team_members = models.ManyToManyField('self', blank=True)
     manager = models.ForeignKey('self', null=True, default=None, on_delete=models.SET_DEFAULT)
     salary = models.IntegerField()

@@ -24,3 +24,23 @@
     height: 162px;
     width: 288px;
 }
+
+.quote {
+    font-size: 32px;
+    font-family: HGSMinchoE;
+    font-style: ;
+    font-weight: bold;
+}
+
+.quote-comas {
+    font-size: 48px;
+    font-style: italic;
+    font-family: Felix Titling;
+}
+
+.contact-logo {
+    font-size: 20px;
+}
+
+
+

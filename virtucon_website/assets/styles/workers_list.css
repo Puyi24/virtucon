@@ -1,6 +1,4 @@
-.py5 {
 
-}
 .card {
     position: relative;
     display: -webkit-flex;
@@ -28,8 +26,11 @@
 .quote {
     font-size: 32px;
     font-family: HGSMinchoE;
-    font-style: ;
     font-weight: bold;
+}
+
+.quote-section{
+    height: 180px;
 }
 
 .quote-comas {
@@ -42,5 +43,8 @@
     font-size: 20px;
 }
 
+.manager {
+
+}
 
 

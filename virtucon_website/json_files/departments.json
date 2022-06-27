@@ -1,0 +1,20 @@
+{
+    "departments": [
+		{
+			"id" : 1,
+			"dep_name" : "Board"
+		},
+		{
+			"id" : 2,
+			"dep_name" : "Finance and Revenue"
+		},
+		{
+			"id" : 3,
+			"dep_name" : "Attack and Defense"
+		},
+		{
+			"id" : 4,
+			"dep_name" : "Technology and Research"
+		}
+    ]
+}

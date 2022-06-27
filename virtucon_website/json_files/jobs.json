@@ -1,0 +1,56 @@
+{
+    "jobs": [
+        {
+            "id" : 1,
+            "job_name" : "Owner ,CEO & A True Genius"
+        },
+        {
+            "id" : 2,
+            "job_name" : "Department Head"
+        },
+        {
+            "id" : 3,
+            "job_name" : "Empire Heir"
+        },
+        {
+            "id" : 4,
+            "job_name" : "CEO Clone"
+        },
+        {
+            "id" : 5,
+            "job_name" : "Assassin"
+        },
+        {
+            "id" : 6,
+            "job_name" : "Security Guard"
+        },
+        {
+            "id" : 7,
+            "job_name" : "Financial Planner"
+        },
+        {
+            "id" : 8,
+            "job_name" : "Stocks Expert"
+        },
+        {
+            "id" : 9,
+            "job_name" : "Shareholders Contact Man"
+        },
+        {
+            "id" : 10,
+            "job_name" : "Nuclear Scientist"
+        },
+        {
+            "id" : 11,
+            "job_name" : "Rocket Scientist"
+        },
+        {
+            "id" : 12,
+            "job_name" : "Cryonics Freezing Expert"
+        },
+        {
+            "id" : 13,
+            "job_name" : "Emotional Support Animal for the CEO"
+        }
+    ]
+}

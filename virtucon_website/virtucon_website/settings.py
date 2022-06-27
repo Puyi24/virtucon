@@ -78,16 +78,25 @@ WSGI_APPLICATION = 'virtucon_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'virtucon_db',
+#         'USER': 'root',
+#         'PASSWORD': 'NoFahn24)3',
+#         'HOST': 'localhost',
+#         'PORT': '3306'
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'djongo',
         'NAME': 'virtucon_db',
-        'USER': 'root',
-        'PASSWORD': 'NoFahn24)3',
-        'HOST': 'localhost',
-        'PORT': '3306'
     }
 }
+
+
 
 
 # Password validation

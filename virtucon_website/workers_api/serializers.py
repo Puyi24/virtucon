@@ -17,6 +17,5 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
 class WorkerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Worker
-        fields = ['id', 'url', 'first_name', 'last_name', 'profile_pic',
-                  'job', 'department', 'personal_motto', 'team_members',
-                  'manager', 'salary', 'hire_date', 'email', 'phone']
+        fields = ['id', 'url', 'first_name', 'last_name', 'professional_name', 'profile_pic', 'job', 'department',
+                  'personal_motto', 'team_members', 'manager', 'salary', 'hire_date', 'email', 'phone']

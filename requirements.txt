@@ -2,3 +2,9 @@ pillow
 django
 djongo
 pymongo 3.12.1
+pandas
+xlrd
+openpyxl
+matplotlib
+numpy
+requests

@@ -1,0 +1,36 @@
+<div class="row justify-content-start pt-4">
+    {% for member in dept %}
+    <div class="worker col-4 my-5 py-4 .d-print-inline-block">
+        <div class="card border-0 shadow-lg px-0 pt-4 position-relative">
+            <div class="card-body p-4">
+                <div class="member-profile position-absolute w-100 text-center">
+                    <img class="rounded-top mx-auto d-inline-block shadow-sm" src="{{member.profile_pic.url}}" alt="">
+                </div>
+                <div class="card-text pt-4 my=5">
+                    <h5 class="worker-name mb-0 text-center text-primary font-weight-bold">{{member}}</h5>
+                    <div class="text-center">
+                          {{member.job}}
+                    </div>
+                    <div class="quote-section d-flex text-center text-dark">
+                        <i class="quote-comas text-primary align-self-end">"</i>
+                        <i class="quote col-8 mx-auto my-auto" id="quote-small">{{member.personal_motto}}</i>
+                        <i class="quote-comas text-primary">"</i>
+                    </div>
+                </div><!--//card-text-->
+            </div><!--//card-body-->
+            <div class="card-footer bg-secondary border-0 text-white text-center">
+                <ul class="contact-list list-inline my-auto mx-auto">
+                    <div class="phone list-inline-item">
+                        <i class="contact-logo bi bi-telephone my-auto"></i>
+                        <i class="ms-1">{{member.phone}}</i>
+                    </div>
+                    <div class="email list-inline-item ps-5">
+                        <i class="contact-logo bi bi-envelope my-auto"></i>
+                        <a class="link-light my-auto" href="mailto: {{member.email}}">{{member.email}}</a>
+                    </div>
+                </ul><!--//contact-list-->
+            </div><!--//card-footer-->
+        </div> <!--//card-border-->
+    </div> <!--//worker-->
+    {% endfor %}
+</div>  <!--//row-->

@@ -29,8 +29,12 @@
     font-weight: bold;
 }
 
+#quote-small {
+    font-size: 22px !important;
+}
+
 .quote-section{
-    height: 180px;
+    height: 220px;
 }
 
 .quote-comas {
@@ -43,8 +47,11 @@
     font-size: 20px;
 }
 
-.manager {
-
+#board,
+#finance-and-revenue,
+#attack-and-defence,
+#technology-and-research{
+    scroll-margin-top: 285px
 }
 
 

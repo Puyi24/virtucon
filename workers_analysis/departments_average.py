@@ -10,7 +10,6 @@ import analysis_tools as at
 
 EXCEL_PATH = 'results/workers.xlsx'
 
-
 def generate_excel():
     """
     Converting the api data of the workers to an excel file,

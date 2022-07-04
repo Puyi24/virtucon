@@ -1,0 +1,27 @@
+Average salary: 297626.32
+Workers whose salary is twice or more than average:
+
+Worker: Dr. Evil
+Job Description: Owner ,CEO & A True Genius
+Department: Board
+Hired at: 1967-01-01
+Salary: 1000000
+
+******************
+
+Worker: Scott Evil
+Job Description: Empire Heir
+Department: Board
+Hired at: 1997-05-02
+Salary: 900000
+
+******************
+
+Worker: Mini-Me
+Job Description: CEO Clone
+Department: Board
+Hired at: 1999-05-08
+Salary: 950000
+
+******************
+

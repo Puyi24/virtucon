@@ -4,7 +4,7 @@
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-<link rel="stylesheet" href="{% static 'styles/workers_list.css' %}" xmlns="http://www.w3.org/1999/html">
+    <link rel="stylesheet" href="{% static 'styles/workers_list.css' %}" xmlns="http://www.w3.org/1999/html">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -90,186 +90,30 @@
             {% endfor %}
         </div>  <!--//row-->
 
-
-
-        <div id="board"></div> <!-- Board SECTION-->
-        <div class="row py-2 mb-5 bg-primary text-light text-center rounded">
-            <h1 class>Board</h1>
+        <div class="row" id="board">
+            <h1 class="w-100 py-3 mb-5 bg-primary text-light text-center rounded">Board</h1>
+            <br>
+            {% include 'department_sec.html' with dept=board %}
         </div>
-        <br>
-        <div class="row justify-content-start pt-4">
-            {% for member in board %}
-            <div class="worker col-4 my-5 py-4 .d-print-inline-block">
-                <div class="card border-0 shadow-lg px-0 pt-4 position-relative">
-                    <div class="card-body p-4">
-                        <div class="member-profile position-absolute w-100 text-center">
-                            <img class="rounded-top mx-auto d-inline-block shadow-sm" src="{{member.profile_pic.url}}" alt="">
-                        </div>
-                        <div class="card-text pt-4 my=5">
-                            <h5 class="worker-name mb-0 text-center text-primary font-weight-bold">{{member}}</h5>
-                            <div class="text-center">
-                                {{member.job}}
-                            </div>
-                            <div class="quote-section d-flex text-center text-dark">
-                                <i class="quote mx-auto my-auto">
-                                <span class="quote-comas text-primary pe-4">"</span>
-                                {{member.personal_motto}}
-                                <span class="quote-comas text-primary ps-4">"</span>
-                                </i>
-                            </div>
-                        </div><!--//card-text-->
-                    </div><!--//card-body-->
-                    <div class="card-footer bg-secondary border-0 text-white text-center">
-                        <ul class="contact-list list-inline my-auto mx-auto">
-                            <div class="phone list-inline-item">
-                                <i class="contact-logo bi bi-telephone my-auto"></i>
-                                <i class="ms-1">{{member.phone}}</i>
-                            </div>
-                            <div class="email list-inline-item ps-5">
-                                <i class="contact-logo bi bi-envelope my-auto"></i>
-                                <a class="link-light my-auto" href="mailto: {{member.email}}">{{member.email}}</a>
-                            </div>
-                        </ul><!--//contact-list-->
-                    </div><!--//card-footer-->
-                </div> <!--//card-border-->
-            </div> <!--//col-->
-        {% endfor %}
-        </div>  <!--//row-->
 
-
-
-        <div class="row w-100 py-2 mb-5 bg-primary text-light text-center rounded" id="finance-and-revenue"> <!-- finance SECTION-->
-            <h1 class>Finance and Revenue</h1>
+        <div class="row " id="finance-and-revenue">
+            <h1 class="w-100 py-3 mb-5 bg-primary text-light text-center rounded">Finance and Revenue</h1>
+            <br>
+            {% include 'department_sec.html' with dept=finance %}
         </div>
-        <br>
-        <div class="row justify-content-start pt-4">
-            {% for member in finance %}
-            <div class="worker col-4 my-5 py-4 .d-print-inline-block">
-                <div class="card border-0 shadow-lg px-0 pt-4 position-relative">
-                    <div class="card-body p-4">
-                        <div class="member-profile position-absolute w-100 text-center">
-                            <img class="rounded-top mx-auto d-inline-block shadow-sm" src="{{member.profile_pic.url}}" alt="">
-                        </div>
-                        <div class="card-text pt-4 my=5">
-                            <h5 class="worker-name mb-0 text-center text-primary font-weight-bold">{{member}}</h5>
-                            <div class="text-center">
-                              {{member.job}}
-                            </div>
-                            <div class="quote-section d-flex text-center text-dark">
-                                <i class="quote mx-auto my-auto">
-                                <span class="quote-comas text-primary pe-4">"</span>
-                                {{member.personal_motto}}
-                                <span class="quote-comas text-primary ps-4">"</span>
-                                </i>
-                            </div>
-                        </div><!--//card-text-->
-                    </div><!--//card-body-->
-                    <div class="card-footer bg-secondary border-0 text-white text-center">
-                        <ul class="contact-list list-inline my-auto mx-auto">
-                            <div class="phone list-inline-item">
-                                <i class="contact-logo bi bi-telephone my-auto"></i>
-                                <i class="ms-1">{{member.phone}}</i>
-                            </div>
-                            <div class="email list-inline-item ps-5">
-                                <i class="contact-logo bi bi-envelope my-auto"></i>
-                                <a class="link-light my-auto" href="mailto: {{member.email}}">{{member.email}}</a>
-                            </div>
-                        </ul><!--//contact-list-->
-                    </div><!--//card-footer-->
-                </div> <!--//card-border-->
-            </div> <!--//col-->
-            {% endfor %}
-        </div>  <!--//row-->
 
-
-
-        <div class="row w-100 py-2 mb-5 bg-primary text-light text-center rounded" id="attack-and-defence"> <!-- finance SECTION-->
-            <h1 class>Attack and Defense</h1>
+        <div class="row " id="attack-and-defence">
+            <h1 class="w-100 py-3 mb-5 bg-primary text-light text-center rounded">Attack and Defense</h1>
+            <br>
+            {% include 'department_sec.html' with dept=attack_defence %}
         </div>
-        <br>
-        <div class="row justify-content-start pt-4">
-            {% for member in attack_defence %}
-            <div class="worker col-4 my-5 py-4 .d-print-inline-block">
-                <div class="card border-0 shadow-lg px-0 pt-4 position-relative">
-                    <div class="card-body p-4">
-                        <div class="member-profile position-absolute w-100 text-center">
-                            <img class="rounded-top mx-auto d-inline-block shadow-sm" src="{{member.profile_pic.url}}" alt="">
-                        </div>
-                        <div class="card-text pt-4 my=5">
-                            <h5 class="worker-name mb-0 text-center text-primary font-weight-bold">{{member}}</h5>
-                            <div class="text-center">
-                                      {{member.job}}
-                            </div>
-                            <div class="quote-section d-flex text-center text-dark">
-                                    <i class="quote mx-auto my-auto">
-                                    <span class="quote-comas text-primary pe-4">"</span>
-                                    {{member.personal_motto}}
-                                    <span class="quote-comas text-primary ps-4">"</span>
-                                    </i>
-                            </div>
-                        </div><!--//card-text-->
-                    </div><!--//card-body-->
-                    <div class="card-footer bg-secondary border-0 text-white text-center">
-                        <ul class="contact-list list-inline my-auto mx-auto">
-                            <div class="phone list-inline-item">
-                                <i class="contact-logo bi bi-telephone my-auto"></i>
-                                <i class="ms-1">{{member.phone}}</i>
-                            </div>
-                            <div class="email list-inline-item ps-5">
-                                <i class="contact-logo bi bi-envelope my-auto"></i>
-                                <a class="link-light my-auto" href="mailto: {{member.email}}">{{member.email}}</a>
-                            </div>
-                        </ul><!--//contact-list-->
-                    </div><!--//card-footer-->
-                </div> <!--//card-border-->
-            </div> <!--//col-->
-            {% endfor %}
-        </div>  <!--//row-->
 
-
-
-        <div class="row w-100 py-2 mb-5 bg-primary text-light text-center rounded" id="technology-and-research"> <!-- Technology SECTION-->
-            <h1 class>Technology and Research</h1>
+        <div class="row " id="technology-and-research">
+            <h1 class="w-100 py-3 mb-5 bg-primary text-light text-center rounded">Technology and Research</h1>
+            <br>
+            {% include 'department_sec.html' with dept=technology %}
         </div>
-        <br>
-        <div class="row justify-content-start pt-4">
-            {% for member in technology %}
-            <div class="worker col-4 my-5 py-4 .d-print-inline-block">
-                <div class="card border-0 shadow-lg px-0 pt-4 position-relative">
-                    <div class="card-body p-4">
-                        <div class="member-profile position-absolute w-100 text-center">
-                            <img class="rounded-top mx-auto d-inline-block shadow-sm" src="{{member.profile_pic.url}}" alt="">
-                        </div>
-                        <div class="card-text pt-4 my=5">
-                            <h5 class="worker-name mb-0 text-center text-primary font-weight-bold">{{member}}</h5>
-                            <div class="text-center">
-                                  {{member.job}}
-                            </div>
-                            <div class="quote-section d-flex text-center text-dark">
-                                <i class="quote mx-auto my-auto">
-                                <span class="quote-comas text-primary pe-4">"</span>
-                                {{member.personal_motto}}
-                                <span class="quote-comas text-primary ps-4">"</span>
-                                </i>
-                            </div>
-                        </div><!--//card-text-->
-                    </div><!--//card-body-->
-                    <div class="card-footer bg-secondary border-0 text-white text-center">
-                        <ul class="contact-list list-inline my-auto mx-auto">
-                            <div class="phone list-inline-item">
-                                <i class="contact-logo bi bi-telephone my-auto"></i>
-                                <i class="ms-1">{{member.phone}}</i>
-                            </div>
-                            <div class="email list-inline-item ps-5">
-                                <i class="contact-logo bi bi-envelope my-auto"></i>
-                                <a class="link-light my-auto" href="mailto: {{member.email}}">{{member.email}}</a>
-                            </div>
-                        </ul><!--//contact-list-->
-                    </div><!--//card-footer-->
-                </div> <!--//card-border-->
-            </div> <!--//col-->
-            {% endfor %}
-        </div>  <!--//row-->
+
     </div> <!--//container-->
 </section>
 {% endblock %}

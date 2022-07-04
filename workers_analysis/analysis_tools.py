@@ -1,10 +1,14 @@
 """
 This model consists useful functions for using the api data
 """
+import pathlib
 
 import requests
 import json
-
+import numpy as np
+from datetime import datetime
+import os
+from pathlib import Path
 
 WORKERS_API = "http://127.0.0.1:8000/api/workers"
 DEPS_API = 'http://127.0.0.1:8000/api/departments/'
@@ -66,6 +70,28 @@ def get_name(worker):
         return f'{worker["first_name"]} {worker["last_name"]}'
 
 
+def get_average(workers):
+    salaries = np.array(
+        [worker['salary'] for worker in workers]
+    )
+    return np.average(salaries)
+
+
+def seniority_calc(date_str):
+    """
+    Calculating how many years a worker has worked in the company
+    :param date_str: date of the worker's first day in the company
+    :type date_str: str
+    :return: how many years the worker has worked in the company
+    :rtype: int
+    """
+    date_to_check = datetime.strptime(date_str, "%Y-%m-%d")
+    today = datetime.now()
+    seniority = today.year - date_to_check.year
+    seniority -= ((today.month, today.day) < (date_to_check.month, date_to_check.day))
+    return seniority
+
+
 def worker_str(worker):
     """
     Generating a long string containing the selected worker's essential details.
@@ -77,9 +103,8 @@ def worker_str(worker):
     final_str = f'Worker: {get_name(worker)}\n'
     final_str += f'Job Description: {extract_job(worker)}\n'
     final_str += f'Department: {extract_department(worker)}\n'
-    final_str += f'Salary: {worker["salary"]}\n'
     final_str += f'Hired at: {worker["hire_date"]}\n'
-    final_str += '\n******************\n\n'
+    final_str += f'Salary: {worker["salary"]}\n'
     return final_str
 
 
@@ -96,3 +121,23 @@ def deps_translate():
     for dep in deps:
         deps_dict.update({dep['url']: dep['dep_name']})
     return deps_dict
+
+
+def worker_by_id(workers, id):
+    if type(id) is int:
+        for worker in workers:
+            if worker['id'] == id:
+                return worker
+    return None
+
+
+def get_img_path(worker):
+    file_name = pathlib.Path(worker['profile_pic']).stem
+    file_name += '.png'
+    img_path = os.path.join(
+        Path(__file__).resolve().parent.parent,
+        'virtucon_website',
+        'media',
+        file_name
+    )
+    return img_path

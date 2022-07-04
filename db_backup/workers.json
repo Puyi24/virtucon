@@ -88,7 +88,7 @@
             "department_id" : 1,
             "job_id" : 3,
             "manager_id" : 1,
-            "personal_motto" : "I wish I was never created in a lab"
+            "personal_motto" : "I wish I was never artificially created in a lab"
         },
         {
             "id" : 7,
@@ -208,7 +208,7 @@
             "department_id" : 2,
             "job_id" : 7,
             "manager_id" : 2,
-            "personal_motto" : "Never lose money"
+            "personal_motto" : "Rule #1: Never lose money. Rule #2: Don't forget rule #1"
         },
         {
             "id" : 15,

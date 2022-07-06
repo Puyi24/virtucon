@@ -21,7 +21,7 @@ class Worker(models.Model):
     last_name = models.CharField(max_length=255)
     professional_name = models.CharField(max_length=255, blank=True)
     profile_pic = models.ImageField(default="")
-    job = models.ForeignKey(Job, default="Confidential", on_delete=models.SET_DEFAULT, )
+    job = models.ForeignKey(Job, default="Confidential", on_delete=models.SET_DEFAULT)
     department = models.ForeignKey(Department, default="General", on_delete=models.SET_DEFAULT)
     personal_motto = models.CharField(max_length=120, default='')
     team_members = models.ManyToManyField('self', blank=True)

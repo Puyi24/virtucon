@@ -1,11 +1,11 @@
 """
-This program generates two text files.
+This program generates two text files in the subdirectory 'result'.
 
-first one lists the workers who worked at the company more the one year
+first one lists the workers who have worked at the company more the one year
 and whose salary is less than average
 
 The second one lists the workers whose salary is more than twice of the average salary,
-while using numpy arrays
+while using numpy arrays as much as possible
 
 The two processes will be executed simultaneously via the multiprocessing module.
 """
@@ -17,9 +17,9 @@ import analysis_tools as at
 
 def find_underpaid(workers):
     """
-    Generating the text file listing the workers who worked at the company more the one year
+    Generating the text file listing the workers who have worked at the company more than one year
     and whose salary is less than average
-    :param workers: list of dictionaries containing each worker details
+    :param workers: list of dictionaries containing each worker's details
     :type workers: list
     :return: none
     """
@@ -37,10 +37,12 @@ def find_overpaid(workers):
     """
     Generating the text file listing the workers whose salary is more than twice of the average salary,
     while using numpy arrays as much as possible
-    :param workers: list of dictionaries containing each worker details
+    :param workers: list of dictionaries containing each worker's details
     :type workers: list
     :return: none
     """
+    # A list of the salaries is needed for further use later in this function. Therefore, in order to prevent
+    # code repetition the get_average() function of the analysis_tools module won't be called in this function
     salaries = np.array(
         [worker['salary'] for worker in workers]
     )

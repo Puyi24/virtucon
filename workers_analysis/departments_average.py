@@ -1,8 +1,7 @@
 """"
-This program first converts the api data of the workers to an excel file,
+This program first converts the api data of the workers to an excel file in the subdirectory 'result',
 then displays a graph of every department's average salary
 """
-
 
 import pandas as pd
 import matplotlib.pyplot as plt

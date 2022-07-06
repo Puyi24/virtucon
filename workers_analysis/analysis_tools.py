@@ -17,7 +17,7 @@ DEPS_API = 'http://127.0.0.1:8000/api/departments/'
 def extract_api(url=WORKERS_API):
     """
     Extracting api data from a requested url.
-    If an url is not mentioned the data will be extracted from the api url of all workers
+    If an url is not mentioned the data will be extracted from the api url of all the workers' details
     :param url: path of requested api data
     :type url: str
     :return: requested api data
@@ -44,10 +44,10 @@ def extract_job(worker):
 
 def extract_department(worker):
     """
-    Converting an api link of a worker's department to the job's name
-    :param worker: the worker whose department needs to be converted
+    Converting an api link of a worker's department to the department's name
+    :param worker: the worker whose department's name is needed
     :type worker: dict
-    :return: job's name
+    :return: department's name
     :rtype: str
     """
     dep = extract_api(worker['department'])
@@ -56,7 +56,7 @@ def extract_department(worker):
 
 def get_name(worker):
     """
-    Selecting how do display the worker's name.
+    Selecting how to display the worker's name.
     if the worker has a professional name, this name will be displayed.
     if he doesn't, the function will combine his first and last name to one string.
     :param worker: the worker whose name is needed
@@ -71,6 +71,13 @@ def get_name(worker):
 
 
 def get_average(workers):
+    """
+    Calculating the average salary of the company's workers
+    :param workers: list of the workers' dictionaries
+    :type workers: dict
+    :return: the average salary
+    :rtype: float
+    """
     salaries = np.array(
         [worker['salary'] for worker in workers]
     )
@@ -95,7 +102,7 @@ def seniority_calc(date_str):
 def worker_str(worker):
     """
     Generating a long string containing the selected worker's essential details.
-    :param worker: The worker needs to be represented with the string
+    :param worker: The worker who needs the string representation
     :type worker: dict
     :return: The string representing the worker
     :rtype: str
@@ -112,7 +119,7 @@ def deps_translate():
     """
     Generating a dictionary in which every key is a department api link,
     and every value is the name of the suitable department.
-    this will be used for converting more than one department api link to departments names.
+    this will be used in cases when more than one of such conversion is needed
     :return: the dictionary mentioned above
     :rtype: dict
     """
@@ -123,15 +130,32 @@ def deps_translate():
     return deps_dict
 
 
-def worker_by_id(workers, id):
-    if type(id) is int:
+def worker_by_id(workers, worker_id):
+    """
+    Finding a specific worker in the list of workers by its ID
+    :param workers: list of all workers
+    :param worker_id: the id of the needed worker
+    :type workers: list
+    :type worker_id: int
+    :return: if the ID is valid - a dictionary representing the needed worker
+    else - None
+    :rtype: dict or None
+    """
+    if type(worker_id) is int:
         for worker in workers:
-            if worker['id'] == id:
+            if worker['id'] == worker_id:
                 return worker
     return None
 
 
 def get_img_path(worker):
+    """
+    Converting a worker's image api link to the image location in the project's directories
+    :param worker: the worker whose image is needed
+    :type worker: dict
+    :return: path of the needed image
+    :rtype: str
+    """
     file_name = pathlib.Path(worker['profile_pic']).stem
     file_name += '.png'
     img_path = os.path.join(

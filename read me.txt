@@ -1,0 +1,17 @@
+this project is consisted of 3 directories:
+
+db_backup:
+
+- containing 4 json files and one python script ('restore_db').
+the script generates a mongo database, based on the json files in the directory.
+all other features in this project are based on this database.
+please run this script before using the other directories in this project.
+
+
+virtucon_website:
+ - a django project of a website which presents the workers of the fictional company "Virtucon Industries".
+
+
+workers_analysis:
+ - 4 python files which analyse the workers of Virtucon Industries.
+ a description of each file's purpose can be found in its first lines
